@@ -1,0 +1,35 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="text" placeholder="Enter a number" id="num">
+    <button onclick="change()">Reformat</button>
+    <p id="result">Result: </p>
+</body>
+
+</html>
+<script>
+    function change() {
+        let num = document.getElementById("num").value;
+        let arr = []
+        for (i = 0; i < num.length; i++) {
+            arr[i] = num[i]
+        }
+        let result = ""
+        for (i = 0; i < num.length; i++) {
+            if (arr[i] % 2 == 0 && arr[i + 1] % 2 == 0) {
+                result += (arr[i] + "-")
+            }
+            else {
+                result += arr[i]
+            }
+        }
+        document.getElementById("result").innerHTML = "Result: " + result
+    }
+</script>
